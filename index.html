@@ -17,6 +17,26 @@
             font-family: 'NewFont';  /* 为XIAOHUAI设置新字体 */
             src: url('./四铭字体.ttf') format('truetype');
         }
+        /* 添加固定顶部的样式 */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #fff; /* 添加背景色以确保内容不被遮挡 */
+        }
+        /* 为欢迎语区域添加padding-top，避免被顶部区域遮挡 */
+        .welcome-section {
+            padding-top: 80px; /* 根据顶部区域的高度调整 */
+        }
+        /* 功能导航文字样式 */
+        .sidebar ul li a {
+            color: #666; /* 深灰色 */
+            text-decoration: none; /* 默认无下划线 */
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline wavy; /* 鼠标悬停时显示下划波浪线 */
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -40,10 +60,11 @@
         </div>
     </section>
 
-    <!-- 建议区域2 -->
-    <section class="advice-section">
+    <!-- 复制的欢迎语区域 -->
+    <section class="welcome-section">
         <div class="container">
-            <div class="advice-text">推荐使用百度和谷歌浏览器</div>
+            <div class="welcome-text">欢迎光临晓怀的网络空间</div>
+            <div class="browser-recommendation" style="text-align: center;">推荐使用百度或谷歌浏览器</div>
         </div>
     </section>
 
@@ -143,21 +164,21 @@
                 <li>
                     <h4>代剪服务</h4>
                     <ul>
-                        <li>主页背景 - 3米</li>
-                        <li>跑车音乐 - 21米</li>
-                        <li>滑动音乐 - 17米</li>
-                        <li>音乐专辑 - 7米</li>
-                        <li>相册混剪 - 21米</li>
+                        <li><a href="zhuye-detail.html">主页背景 - 3米</a></li>
+                        <li><a href="baoche-detail.html">跑车音乐 - 21米</a></li>
+                        <li><a href="huadong-detail.html">滑动音乐 - 17米</a></li>
+                        <li><a href="zhuanji-detail.html">音乐专辑 - 7米</a></li>
+                        <li><a href="xiangce-detail.html">相册混剪 - 21米</a></li>
                     </ul>
                 </li>
                 <li>
                     <h4>NV工程</h4>
                     <ul>
-                        <li>主页背景 - 5米</li>
-                        <li>跑车音乐 - 68米</li>
-                        <li>滑动音乐 - 21米</li>
-                        <li>音乐专辑 - 17米</li>
-                        <li>相册混剪 - 40米</li>
+                        <li><a href="zhuye-detail.html">主页背景 - 5米</a></li>
+                        <li><a href="baoche-detail.html">跑车音乐 - 68米</a></li>
+                        <li><a href="huadong-detail.html">滑动音乐 - 21米</a></li>
+                        <li><a href="zhuanji-detail.html">音乐专辑 - 17米</a></li>
+                        <li><a href="xiangce-detail.html">相册混剪 - 40米</a></li>
                     </ul>
                 </li>
             </ul>
