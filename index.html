@@ -37,6 +37,31 @@
         .sidebar ul li a:hover {
             text-decoration: underline wavy; /* 鼠标悬停时显示下划波浪线 */
         }
+
+        /* 动画过渡效果 */
+        body {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 0.5s ease forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -191,5 +216,18 @@
     <!-- Swiper JS CDN -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // 为所有链接添加跳转动画
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.href;
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
