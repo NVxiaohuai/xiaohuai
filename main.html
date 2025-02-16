@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        @font-face {
+            font-family: 'YiQiFont';
+            src: url('./义启星空之翼.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'NewFont';  /* 为XIAOHUAI设置新字体 */
+            src: url('./四铭字体.ttf') format('truetype');
+        }
+        /* 添加固定顶部的样式 */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #fff; /* 添加背景色以确保内容不被遮挡 */
+        }
+        /* 为欢迎语区域添加padding-top，避免被顶部区域遮挡 */
+        .welcome-section {
+            padding-top: 80px; /* 根据顶部区域的高度调整 */
+        }
+        /* 功能导航文字样式 */
+        .sidebar ul li a {
+            color: #666; /* 深灰色 */
+            text-decoration: none; /* 默认无下划线 */
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline wavy; /* 鼠标悬停时显示下划波浪线 */
+        }
+
+        /* 动画过渡效果 */
+        body {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 0.5s ease forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部区域 -->
+    <header class="header">
+        <div class="container">
+            <div class="profile">
+                <div class="profile-left">
+                    <img src="./xiaohuai.jpg" alt="个人头像" class="avatar">
+                    <span class="profile-name">XIAOHUAI</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 欢迎语区域 -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-text">欢迎光临晓怀的小窝</div>
+        </div>
+    </section>
+
+    <!-- 复制的欢迎语区域 -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-text">欢迎光临晓怀的网络空间</div>
+            <div class="browser-recommendation" style="text-align: center;">推荐使用百度或谷歌浏览器</div>
+        </div>
+    </section>
+
+    <!-- 照片轮播区域 -->
+    <section class="slider-section">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="@zhuye.png" alt="主页照片"></div>
+                <div class="swiper-slide"><img src="@kyrz1.jpg" alt="快影认证1"></div>
+                <div class="swiper-slide"><img src="@kyrz2.jpg" alt="快影认证2"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- 服务板块区域 -->
+    <section class="services-section">
+        <div class="container">
+            <div class="service-item">
+                <a href="daijian.html" class="service-link">
+                    <img src="@nv.png" alt="代剪服务" class="service-img">
+                    <div class="service-content">
+                        <h2>代剪</h2>
+                        <p>专业视频剪辑服务，为您打造精彩视频内容</p>
+                    </div>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="nv-project.html" class="service-link">
+                    <img src="@nv.png" alt="NV工程" class="service-img">
+                    <div class="service-content">
+                        <h2>NV工程</h2>
+                        <p>专业的NV工程服务，提供优质技术支持</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们区域 -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-title">关于我们</h2>
+            <div class="about-content">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" id="wechat">
+                            <i class="fab fa-weixin"></i>
+                            <span>微信：PXSHSHH</span>
+                        </a>
+                        <a href="#" class="social-icon" id="kuaishou">
+                            <img src="@ks.png" alt="快手" class="ks-icon">
+                            <span>快手：MemoryHuiYi_ing</span>
+                        </a>
+                        <a href="mailto:3382606608@qq.com" class="social-icon">
+                            <i class="far fa-envelope"></i>
+                            <span>邮箱：3382606608@qq.com</span>
+                        </a>
+                        <a href="javascript:void(0)" class="social-icon qq-link">
+                            <i class="fab fa-qq"></i>
+                            <span>QQ：3382606608</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 微信二维码弹窗 -->
+    <div id="wechat-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div style="text-align: center; padding: 20px;">
+                <h3 style="margin-bottom: 15px;">我的微信号</h3>
+                <p style="font-size: 24px; color: #333;">PXSHSHH</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快手号弹窗 -->
+    <div id="kuaishou-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div style="text-align: center; padding: 20px;">
+                <h3 style="margin-bottom: 15px;">我的快手号</h3>
+                <a href="https://www.kuaishou.com/profile/3xt4v8wbsjc23s9" target="_blank" style="font-size: 24px; color: #333; text-decoration: none; cursor: pointer;">MemoryHuiYi_ing</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <h3>功能导航</h3>
+            <ul>
+                <li>
+                    <h4>代剪服务</h4>
+                    <ul>
+                        <li><a href="zhuye-detail.html">主页背景 - 3米</a></li>
+                        <li><a href="baoche-detail.html">跑车音乐 - 21米</a></li>
+                        <li><a href="huadong-detail.html">滑动音乐 - 17米</a></li>
+                        <li><a href="zhuanji-detail.html">音乐专辑 - 7米</a></li>
+                        <li><a href="xiangce-detail.html">相册混剪 - 21米</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>NV工程</h4>
+                    <ul>
+                        <li><a href="zhuye-detail.html">主页背景 - 5米</a></li>
+                        <li><a href="baoche-detail.html">跑车音乐 - 68米</a></li>
+                        <li><a href="huadong-detail.html">滑动音乐 - 21米</a></li>
+                        <li><a href="zhuanji-detail.html">音乐专辑 - 17米</a></li>
+                        <li><a href="xiangce-detail.html">相册混剪 - 40米</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Swiper JS CDN -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // 为所有链接添加跳转动画
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.href;
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
