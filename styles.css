@@ -1,0 +1,560 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "YiQiFont", "Microsoft YaHei", Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头部样式 */
+.header {
+    height: 60px;
+    background-color: #87CEFA; /* 浅天蓝色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.welcome-section {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.welcome-text {
+    font-size: 24px;
+    color: #1E90FF;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    font-family: "YiQiFont", "Microsoft YaHei", sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.profile {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* 整体居中 */
+    width: 100%;
+}
+
+.profile-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    color: #666;
+    transition: transform 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+/* 轮播图样式 */
+.slider-section {
+    height: 400px;
+    margin: 20px 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: rgba(0,0,0,0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #007bff;
+}
+
+/* 微信二维码弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .slider-section {
+        height: 300px;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .welcome-text {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .profile-name {
+        font-size: 24px;  /* 手机版也相应放大 */
+    }
+}
+
+/* 调整快手图标的字体大小 */
+#kuaishou span {
+    font-size: 18px;
+}
+
+/* 服务板块样式 */
+.services-section {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.services-section .container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-content h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.service-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .service-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .service-content h2 {
+        font-size: 20px;
+    }
+    
+    .service-content p {
+        font-size: 14px;
+    }
+}
+
+.service-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+/* 添加关于我们的样式 */
+.about-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #87CEFA;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 修改联系方式区域的样式 */
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info .social-icon {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    height: 54px;  /* 固定高度 */
+}
+
+.contact-info .social-icon i,
+.contact-info .social-icon .ks-icon {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    height: 24px;  /* 固定高度 */
+    line-height: 24px;  /* 与高度相同 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info .social-icon span {
+    font-size: 16px;
+    padding-left: 0;
+    line-height: 24px;  /* 与图标高度相同 */
+    display: flex;
+    align-items: center;
+}
+
+/* 给不同图标设置不同颜色 */
+.contact-info .social-icon i.fa-weixin {
+    color: #07C160;
+}
+
+.contact-info .social-icon .ks-icon {
+    color: #FE2C55;
+    display: inline-block;
+    width: 24px;
+    height: 24px;  /* 添加高度确保图片比例正确 */
+    margin: 0 auto;
+    object-fit: contain;  /* 确保图片完整显示 */
+}
+
+.contact-info .social-icon i.fa-envelope {
+    color: #D44638;
+}
+
+.contact-info .social-icon i.fa-qq {
+    color: #12B7F5;
+}
+
+/* 特别处理快手账号文字 */
+.contact-info .social-icon#kuaishou span {
+    font-size: 16px;  /* 再次放大 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 28px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contact-info .social-icon {
+        padding: 12px;
+        grid-template-columns: 40px 1fr;
+        align-items: center;
+        height: 44px;  /* 手机版稍微小一点 */
+    }
+
+    .contact-info .social-icon i,
+    .contact-info .social-icon .ks-icon {
+        font-size: 20px;
+        line-height: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-info .social-icon span {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .contact-info .social-icon .ks-icon {
+        width: 20px;
+        height: 20px;  /* 手机版图标尺寸 */
+        margin: 0 auto;
+    }
+
+    .contact-info .social-icon#kuaishou span {
+        font-size: 14px;  /* 手机版也相应放大 */
+    }
+}
+
+.profile-name {
+    color: #ffffff;  /* 改为白色 */
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "NewFont", "Microsoft YaHei", sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);  /* 修改阴影使文字更清晰 */
+    margin-right: 15px;
+}
+
+/* 修改侧边栏样式 */
+.sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;  /* 恢复到原始位置 */
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: -2px 0 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* 当侧边栏激活时的样式 */
+.sidebar.active {
+    right: 0;
+    display: block;
+}
+
+.sidebar-content {
+    padding: 30px;                               /* 增加内边距 */
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar-content h3 {
+    color: #1E90FF;                              /* 使用主题蓝色 */
+    font-size: 26px;                             /* 增大字号 */
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #87CEFA;
+    font-family: "YouSheTitleBlack", "Microsoft YaHei", sans-serif;
+}
+
+.sidebar-content h4 {
+    color: #333;
+    font-size: 20px;                             /* 增大字号 */
+    margin: 20px 0 12px;
+    font-family: "YouSheTitleBlack", "Microsoft YaHei", sans-serif;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sidebar-content ul ul {
+    margin: 12px 0;
+}
+
+.sidebar-content ul ul li {
+    color: #666;
+    padding: 8px 0;
+    font-size: 16px;
+    transition: all 0.3s ease;                   /* 添加过渡效果 */
+    position: relative;                          /* 为hover效果准备 */
+    padding-left: 15px;                         /* 为图标留出空间 */
+}
+
+.sidebar-content ul ul li:before {
+    content: '•';                                /* 添加小圆点 */
+    position: absolute;
+    left: 0;
+    color: #87CEFA;
+}
+
+.sidebar-content ul ul li:hover {
+    color: #1E90FF;                              /* 悬停时变色 */
+    transform: translateX(5px);                   /* 悬停时右移 */
+}
+
+/* 修改按钮样式 */
+.sidebar-toggle {
+    position: fixed;
+    right: 15px;
+    top: 8px;  /* 调整到顶部 */
+    width: 45px;
+    height: 45px;
+    background-color: transparent;  /* 改为透明背景 */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #999;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9998;
+}
+
+.sidebar-toggle:hover {
+    color: #666;
+    background-color: transparent;  /* 悬停时也保持透明 */
+}
+
+/* 移除滚动显示相关样式，固定位置 */
+.sidebar-toggle.show {
+    top: 8px;  /* 保持在顶部 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 260px;                            /* 手机版稍微窄一点 */
+        right: -260px;
+    }
+    
+    .sidebar-content {
+        padding: 20px;
+    }
+    
+    .sidebar-content h3 {
+        font-size: 22px;
+    }
+    
+    .sidebar-content h4 {
+        font-size: 18px;
+    }
+    
+    .sidebar-content ul ul li {
+        font-size: 14px;
+        padding: 6px 0 6px 12px;
+    }
+
+    .sidebar-toggle {
+        right: 10px;
+        top: 8px;  /* 手机版也固定在顶部 */
+    }
+} 
