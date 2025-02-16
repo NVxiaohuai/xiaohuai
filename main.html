@@ -217,6 +217,11 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
+        // 页面加载时跳转到 gg.html
+        window.onload = function() {
+            window.location.href = 'gg.html';
+        };
+
         // 为所有链接添加跳转动画
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
