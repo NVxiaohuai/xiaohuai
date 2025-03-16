@@ -209,6 +209,16 @@
                     </div>
                 </a>
             </div>
+            <!-- 新增晓怀云服务板块 -->
+            <div class="service-item">
+                <a href="http://xiaohuai.love1.me/dsw/" class="service-link">
+                    <img src="xiaohuai.jpg" alt="晓怀云" class="service-img">
+                    <div class="service-content">
+                        <h2>晓怀云</h2>
+                        <p>晓怀云服务，为您提供ks低价点赞等云端支持</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -220,22 +230,28 @@
                 <div class="contact-info">
                     <h3>联系方式</h3>
                     <div class="social-links">
-                        <a href="#" class="social-icon" id="wechat">
+                        <a href="weixin://dl/chat?PXSHSHH" class="social-icon" id="wechat">
                             <i class="fab fa-weixin"></i>
                             <span>微信：PXSHSHH</span>
                         </a>
-                        <a href="#" class="social-icon" id="kuaishou">
+                        <a href="https://www.kuaishou.com/profile/NV晓怀【蔓越莓✂️】" class="social-icon" id="kuaishou">
                             <img src="@ks.png" alt="快手" class="ks-icon">
-                            <span>快手：MemoryHuiYi_ing</span>
+                            <span>快手：NV晓怀【蔓越莓✂️】</span>
                         </a>
                         <a href="mailto:3382606608@qq.com" class="social-icon">
                             <i class="far fa-envelope"></i>
                             <span>邮箱：3382606608@qq.com</span>
                         </a>
-                        <a href="javascript:void(0)" class="social-icon qq-link">
+                        <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3382606608" class="social-icon qq-link">
                             <i class="fab fa-qq"></i>
                             <span>QQ：3382606608</span>
                         </a>
+                    </div>
+                    <!-- 新增版权信息和时间 -->
+                    <div class="footer-info" style="text-align: center;">
+                        <p>©晓怀2024-<span id="currentYear"></span></p>
+                        <p>现在时间：<span id="currentTime"></span></p>
+                        <p>已远行时长：<span id="travelDuration"></span>天</p>
                     </div>
                 </div>
             </div>
@@ -321,9 +337,6 @@
 
         // 确认按钮点击事件
         confirmBtn.addEventListener('click', () => {
-            // 设置标志位，表示已经显示过公告
-            localStorage.setItem('announcementShown', 'true');
-            
             // 添加淡出动画
             document.querySelector('.popup').classList.add('fade-out');
             document.querySelector('.overlay').classList.add('fade-out');
@@ -339,6 +352,24 @@
         document.querySelector('.overlay').addEventListener('click', function(e) {
             e.stopPropagation();
         });
+
+        // 新增时间计算逻辑
+        const currentYearElement = document.getElementById('currentYear');
+        const currentTimeElement = document.getElementById('currentTime');
+        const travelDurationElement = document.getElementById('travelDuration');
+
+        const startDate = new Date(2024, 11, 23); // 2024年12月23日
+        const updateTime = () => {
+            const now = new Date();
+            currentYearElement.textContent = now.getFullYear();
+            currentTimeElement.textContent = now.toLocaleString();
+            const timeDiff = now - startDate;
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            travelDurationElement.textContent = daysDiff;
+        };
+
+        updateTime();
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
