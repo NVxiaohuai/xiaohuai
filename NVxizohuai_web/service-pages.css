@@ -1,0 +1,109 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* 返回按钮 */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #87CEFA;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #5FB2E8;
+}
+
+.back-btn i {
+    margin-right: 8px;
+}
+
+/* 服务板块样式 */
+.service-blocks {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.block {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.block h2 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #87CEFA;
+    font-family: "YouSheTitleBlack", "Microsoft YaHei", sans-serif;
+    font-size: 24px;
+}
+
+.block-content {
+    flex: 1;
+}
+
+.block-content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.block-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: "YouSheTitleBlack", "Microsoft YaHei", sans-serif;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .block {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .block-content {
+        width: 100%;
+    }
+
+    .block-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.block-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.block-link:hover {
+    transform: translateY(-5px);
+}
+
+@font-face {
+    font-family: 'YouSheTitleBlack';
+    src: url('./fonts/优设标题黑.ttf') format('truetype');
+} 
